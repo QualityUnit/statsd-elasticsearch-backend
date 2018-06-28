@@ -1,5 +1,6 @@
 // module dependencies
 var http = require('http'),
+    https = require('https'),
     url = require('url');
 
 
@@ -60,5 +61,3 @@ exports.urlReq = function(reqUrl, options, cb){
     // end the request
     req.end();
 }
-
-
