@@ -6,13 +6,13 @@ var http = require('http'),
 
  /**
   * UrlReq - Wraps the http.request function making it nice for unit testing APIs.
-  * 
+  *
   * @param  {string}   reqUrl   The required url in any form
   * @param  {object}   options  An options object (this is optional)
   * @param  {Function} cb       This is passed the 'res' object from your request
-  * 
+  *
   * Credits : https://gist.github.com/1943352
-  * Picked it up from the above URL 
+  * Picked it up from the above URL
   */
 exports.urlReq = function(reqUrl, options, cb){
     if(typeof options === "function"){ cb = options; options = {}; }// incase no options passed in
@@ -46,13 +46,13 @@ exports.urlReq = function(reqUrl, options, cb){
         res.setEncoding('utf-8');
 
         // concat chunks
-        res.on('data', function(chunk){ 
+        res.on('data', function(chunk){
             res.body += chunk ;
         });
 
         // when the response has finished
         res.on('end', function(){
-            
+
             // fire callback
             cb(res.body, res);
         });
