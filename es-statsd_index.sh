@@ -13,6 +13,7 @@ curl -XPUT "${ES_HOST:-localhost}:${ES_PORT:-9200}/_template/statsd-template" -H
           "application" : { "type" : "keyword" },
           "host" : { "type" : "keyword" },
           "account_id" : { "type" : "keyword" },
+          "dc" : { "type" : "keyword" },
           "metric" : { "type" : "keyword" },
           "metric_type" : { "type" : "keyword" },
           "val" : { "type" : "float" },
